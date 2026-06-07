@@ -216,3 +216,39 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Project secrets
+*.env
+.env.local
+.env.production
+
+# AI / API keys
+config/secrets.json
+config/api_keys.json
+
+# Local settings
+settings.local.py
+local_config.py
+
+# VS Code
+.vscode/
+
+# JetBrains
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary exports
+exports/
+temp/
+tmp/
+
+# Logs
+logs/
+*.log
+
+# Large datasets
+data/raw/
+data/private/
