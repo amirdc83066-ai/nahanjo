@@ -9,7 +9,7 @@
 </p>
 
 <p dir="rtl" align="center">
-  از فایل خام و داده‌های نامنظم تا مجموعه‌ای قابل‌ردیابی از ردیف‌ها و مقدارهایی که باید زودتر بررسی شوند
+  از فایل خام و داده‌های نامنظم تا ردیف‌هایی که باید زودتر و دقیق‌تر بررسی شوند
 </p>
 
 <p align="center">
@@ -20,10 +20,82 @@
   <img alt="Persian UI" src="https://img.shields.io/badge/UI-Persian-7C3AED">
 </p>
 
+<p align="center">
+  <img alt="Data workflow" src="https://img.shields.io/badge/Data%20Workflow-0F766E">
+  <img alt="Six Detectors" src="https://img.shields.io/badge/6%20Detectors-1D4ED8">
+  <img alt="Autoencoder" src="https://img.shields.io/badge/Autoencoder-7C3AED">
+  <img alt="Optional AI" src="https://img.shields.io/badge/AI-Optional-C2410C">
+  <img alt="Persian PDF" src="https://img.shields.io/badge/Persian%20PDF-B91C1C">
+</p>
+
 <p dir="rtl" align="right">
   <strong>مرز استفاده:</strong>
-  ناهنجو یک ابزار تحلیل و تصمیم‌یار است، نه سامانه صدور حکم خودکار. هر ردیف یا مقدار علامت‌گذاری‌شده باید در زمینه واقعی داده بررسی شود و به‌تنهایی اثبات خطا، تقلب، خرابی یا علت یک رویداد نیست.
+  ناهنجو ابزار تحلیل و تصمیم‌یار است، نه سامانه صدور حکم خودکار. هر ردیف یا مقداری که برای بررسی نشان داده می‌شود باید در زمینه واقعی داده ارزیابی شود و به‌تنهایی اثبات خطا، تقلب، خرابی یا علت یک رویداد نیست.
 </p>
+
+---
+
+<a id="quick-start"></a>
+<h2 dir="rtl" align="right">شروع سریع</h2>
+
+<h3 dir="rtl" align="right">نسخه آماده ویندوز</h3>
+
+<ol dir="rtl" align="right">
+  <li>فایل نسخه آماده یا Installer ناهنجو را از کنار Release دریافت کنید.</li>
+  <li>اگر Installer دارید، آن را اجرا کنید؛ اگر پوشه آماده دارید، فایل <code>Nahanjo.exe</code> را باز کنید.</li>
+  <li>فایل داده را وارد کنید و تحلیل را شروع کنید.</li>
+</ol>
+
+<h3 dir="rtl" align="right">اجرای سورس</h3>
+
+<p dir="rtl" align="right">
+  برای اجرای ساده سورس، Python 3.11 نسخه 64 بیتی را نصب کنید، یک PowerShell را در ریشه پروژه باز کنید و فقط این دو فرمان را اجرا کنید:
+</p>
+
+~~~powershell
+py -3.11 -m pip install -r requirements.txt
+py -3.11 main.py
+~~~
+
+<p dir="rtl" align="right">
+  ساختن <code>venv</code> اجباری نیست. برای استفاده معمول، همین روش کافی است.
+</p>
+
+<details>
+  <summary dir="rtl">روش اختیاری با محیط مجازی</summary>
+
+~~~powershell
+py -3.11 -m venv venv
+.\venv\Scripts\python.exe -m pip install -r requirements.txt
+.\venv\Scripts\python.exe main.py
+~~~
+
+</details>
+
+<p dir="rtl" align="right">
+  تحلیل اصلی، نمودارها و گزارش PDF بدون هوش مصنوعی اجرا می‌شوند. فقط تفسیر AI، بررسی Update و همگام‌سازی بخش AI به اتصال شبکه نیاز دارند.
+</p>
+
+<a id="at-a-glance"></a>
+<h3 dir="rtl" align="right">در یک نگاه</h3>
+
+<table dir="rtl">
+  <tr>
+    <td align="right"><strong>ورودی</strong><br>CSV، Excel، JSON، TXT و Parquet</td>
+    <td align="right"><strong>تحلیل</strong><br>شش Detector کلاسیک و Autoencoder</td>
+    <td align="right"><strong>خروجی</strong><br>نتیجه، نمودار، PDF و تفسیر اختیاری AI</td>
+  </tr>
+  <tr>
+    <td align="right"><strong>رابط</strong><br>دسکتاپ فارسی با PyQt6</td>
+    <td align="right"><strong>ردیابی</strong><br>اتصال نتیجه به ردیف فایل اصلی</td>
+    <td align="right"><strong>پلتفرم رسمی</strong><br>Windows x64</td>
+  </tr>
+</table>
+
+<blockquote>
+  <strong>نکته انتشار:</strong>
+  <span dir="rtl">تصاویر README از فایل‌های واقعی داخل پوشه <code>docs/assets/architecture_dossier</code> خوانده می‌شوند. این پوشه باید همراه خود README در Repository قرار بگیرد.</span>
+</blockquote>
 
 ---
 
@@ -31,6 +103,7 @@
 <h2 dir="rtl" align="right">فهرست</h2>
 
 <ul dir="rtl" align="right">
+  <li><a href="#quick-start">شروع سریع</a></li>
   <li><a href="#about">معرفی ناهنجو</a></li>
   <li><a href="#problem">مسئله‌ای که ناهنجو حل می‌کند</a></li>
   <li><a href="#solution">راه‌حل و ارزش محصول</a></li>
@@ -42,8 +115,7 @@
   <li><a href="#autoencoder">تحلیل Autoencoder</a></li>
   <li><a href="#ai">هوش مصنوعی و حریم خصوصی</a></li>
   <li><a href="#architecture">معماری سطح‌بالا</a></li>
-  <li><a href="#installation">نصب، تست و Build</a></li>
-  <li><a href="#documentation">مستندات فنی</a></li>
+  <li><a href="#development">توسعه و تست</a></li>
   <li><a href="#status">وضعیت، محدودیت‌ها و مسیر توسعه</a></li>
   <li><a href="#security">امنیت و مجوز</a></li>
 </ul>
@@ -54,11 +126,11 @@
 <h2 dir="rtl" align="right">معرفی ناهنجو</h2>
 
 <p dir="rtl" align="right">
-  ناهنجو یک نرم‌افزار دسکتاپ فارسی برای بررسی ناهنجاری در داده‌های جدولی است. هدف آن این است که میان «فایل خام» و «تصمیم انسانی» یک مسیر منظم، قابل‌فهم و قابل‌پیگیری ایجاد کند. کاربر داده را وارد می‌کند، بخش مورد نظر را انتخاب می‌کند و برنامه با چند روش تحلیلی مستقل، رفتارهای غیرمعمول را پیدا و براساس شواهد موجود مرتب می‌کند.
+  ناهنجو یک نرم‌افزار دسکتاپ فارسی برای بررسی ناهنجاری در داده‌های جدولی است. هدف آن ایجاد یک مسیر منظم میان «فایل خام» و «تصمیم انسانی» است. کاربر داده را وارد می‌کند، بخش مورد نظر را انتخاب می‌کند و برنامه با چند روش تحلیلی مستقل، رفتارهای غیرمعمول را پیدا و براساس شواهد موجود مرتب می‌کند.
 </p>
 
 <p dir="rtl" align="right">
-  خروجی ناهنجو فقط چند عدد قرمز یا یک پیام کلی نیست. برنامه نشان می‌دهد کدام ردیف یا مقدار نیازمند بررسی است، چه روش‌هایی آن را متفاوت دیده‌اند، قدرت نسبی این تفاوت چقدر است، داده ورودی برای تحلیل چه وضعیتی داشته و نتیجه دقیقاً به کدام موقعیت فایل اصلی برمی‌گردد. این اطلاعات در صفحه نتایج، نمودارها، گزارش PDF و تفسیر اختیاری هوش مصنوعی به شکل هماهنگ استفاده می‌شوند.
+  خروجی ناهنجو فقط چند عدد قرمز یا یک پیام کلی نیست. برنامه نشان می‌دهد کدام ردیف یا مقدار نیازمند بررسی است، چه Detectorهایی آن را متفاوت دیده‌اند، قدرت نسبی این تفاوت چقدر است، داده ورودی برای تحلیل چه وضعیتی داشته و نتیجه دقیقاً به کدام موقعیت فایل اصلی برمی‌گردد. همان نتیجه در صفحه نتایج، نمودارها، گزارش PDF و تفسیر اختیاری هوش مصنوعی استفاده می‌شود.
 </p>
 
 <p dir="rtl" align="right">
@@ -77,17 +149,17 @@
 </p>
 
 <p dir="rtl" align="right">
-  در بسیاری از جریان‌های کاری، این مراحل میان چند ابزار، فایل موقت، Notebook و عملیات دستی پخش می‌شوند. نتیجه این پراکندگی معمولاً یکی از مشکلات زیر است:
+  وقتی این مراحل میان چند ابزار، فایل موقت، Notebook و عملیات دستی پخش می‌شوند، مشکلات مهمی به وجود می‌آید:
 </p>
 
 <ul dir="rtl" align="right">
   <li>ساختار فایل، Header یا نوع ستون درست تشخیص داده نمی‌شود؛</li>
   <li>صفر، مقدار تکراری، سلول خالی و متن عددی به‌اشتباه با هم مخلوط می‌شوند؛</li>
   <li>پس از پاک‌سازی یا حذف ردیف‌ها، مشخص نیست نتیجه به کدام ردیف فایل اصلی مربوط است؛</li>
-  <li>یک روش تشخیص به‌تنهایی بعضی الگوها را می‌بیند و بعضی الگوها را از دست می‌دهد؛</li>
-  <li>خروجی خام الگوریتم برای کاربر عملیاتی روشن نمی‌کند از کجا باید بررسی را شروع کند؛</li>
-  <li>نمودار، گزارش و تفسیر متنی از نتیجه علمی جدا می‌شوند و ممکن است روایت متفاوتی بسازند؛</li>
-  <li>هوش مصنوعی ممکن است بدون مرز مشخص، نتیجه‌ای فراتر از شواهد واقعی موتور تولید کند.</li>
+  <li>یک روش تشخیص بعضی الگوها را می‌بیند و بعضی الگوها را از دست می‌دهد؛</li>
+  <li>خروجی خام الگوریتم برای کاربر روشن نمی‌کند از کجا باید بررسی را شروع کند؛</li>
+  <li>نمودار، گزارش و تفسیر متنی از نتیجه علمی جدا می‌شوند و روایت متفاوتی می‌سازند؛</li>
+  <li>هوش مصنوعی بدون مرز مشخص ممکن است متنی فراتر از شواهد واقعی موتور تولید کند.</li>
 </ul>
 
 <p dir="rtl" align="right">
@@ -124,7 +196,7 @@
 <h3 dir="rtl" align="right">۵. تبدیل خروجی علمی به اولویت بررسی</h3>
 
 <p dir="rtl" align="right">
-  ناهنجو تعداد هشدارهای خام را با تعداد ردیف‌های یکتای نیازمند بررسی قاطی نمی‌کند. نتیجه‌ها براساس موقعیت داده یکپارچه می‌شوند، میزان پشتیبانی روش‌ها و قدرت نسبی هر مورد محاسبه می‌شود و یک ترتیب پیشنهادی برای بازبینی ساخته می‌شود. این ترتیب احتمال قطعی یا ریسک مالی کالیبره‌شده نیست؛ ابزاری برای مدیریت بهتر زمان بررسی است.
+  ناهنجو هشدارهای روش‌ها را با تعداد ردیف‌های یکتای نیازمند بررسی قاطی نمی‌کند. نتیجه‌ها براساس موقعیت داده یکپارچه می‌شوند، میزان پشتیبانی روش‌ها و قدرت نسبی هر مورد محاسبه می‌شود و یک ترتیب پیشنهادی برای بازبینی ساخته می‌شود. این ترتیب احتمال قطعی یا ریسک مالی کالیبره‌شده نیست؛ ابزاری برای مدیریت بهتر زمان بررسی است.
 </p>
 
 <h3 dir="rtl" align="right">۶. یک نتیجه مشترک برای تمام خروجی‌ها</h3>
@@ -204,7 +276,7 @@
     <li>Source-row traceability and evidence-based result aggregation</li>
     <li>Independent Autoencoder/reconstruction workspace using PCA and Gaussian Random Projection by default</li>
     <li>Interactive charts, optional AI interpretation, and RTL PDF reports</li>
-    <li>Windows packaging, updater, regression tests, and benchmark tooling</li>
+    <li>Windows packaged release and a simple source-run path</li>
   </ul>
 </div>
 
@@ -214,20 +286,20 @@
 <h2 dir="rtl" align="right">نمای برنامه</h2>
 
 <p dir="rtl" align="right">
-  برای دیدن هر تصویر در اندازه کامل، روی آن کلیک کنید.
+  تصاویر زیر مستقیماً از فایل‌های واقعی رابط برنامه نمایش داده می‌شوند و هیچ لینک کلیک‌پذیری دور آن‌ها قرار نگرفته است.
 </p>
 
 | ورود فایل یا ساخت جدول | پیش‌نمایش، انتخاب و ویرایش داده |
 | :---: | :---: |
-| [![ورود داده در ناهنجو](./docs/assets/architecture_dossier/01-data-entry.png)](./docs/assets/architecture_dossier/01-data-entry.png) | [![پیش‌نمایش داده در ناهنجو](./docs/assets/architecture_dossier/02-data-preview.png)](./docs/assets/architecture_dossier/02-data-preview.png) |
+| ![ورود داده در ناهنجو](./docs/assets/architecture_dossier/01-data-entry.png) | ![پیش‌نمایش داده در ناهنجو](./docs/assets/architecture_dossier/02-data-preview.png) |
 
 | نمودارهای تعاملی | تحلیل اختیاری هوش مصنوعی |
 | :---: | :---: |
-| [![نمودارهای ناهنجو](./docs/assets/architecture_dossier/04-charts.png)](./docs/assets/architecture_dossier/04-charts.png) | [![تحلیل هوش مصنوعی ناهنجو](./docs/assets/architecture_dossier/05-ai-analysis.png)](./docs/assets/architecture_dossier/05-ai-analysis.png) |
+| ![نمودارهای ناهنجو](./docs/assets/architecture_dossier/04-charts.png) | ![تحلیل هوش مصنوعی ناهنجو](./docs/assets/architecture_dossier/05-ai-analysis.png) |
 
 | تحلیل Autoencoder | تنظیمات برنامه |
 | :---: | :---: |
-| [![تحلیل Autoencoder ناهنجو](./docs/assets/architecture_dossier/06-hidden-patterns.png)](./docs/assets/architecture_dossier/06-hidden-patterns.png) | [![تنظیمات ناهنجو](./docs/assets/architecture_dossier/07-settings.png)](./docs/assets/architecture_dossier/07-settings.png) |
+| ![تحلیل Autoencoder ناهنجو](./docs/assets/architecture_dossier/06-hidden-patterns.png) | ![تنظیمات ناهنجو](./docs/assets/architecture_dossier/07-settings.png) |
 
 ---
 
@@ -283,7 +355,7 @@
 <table dir="rtl">
   <tr>
     <th align="right">عملیات</th>
-    <th align="left">فرمت‌ها</th>
+    <th dir="ltr" align="left">فرمت‌ها</th>
   </tr>
   <tr>
     <td align="right">ورود داده</td>
@@ -352,7 +424,7 @@
 <h3 dir="rtl" align="right">شاخص‌های نتیجه</h3>
 
 <ul dir="rtl" align="right">
-  <li><strong>مورد نیازمند بررسی:</strong> ردیف یا مقداری که دست‌کم یک روش معتبر آن را غیرمعمول دیده است.</li>
+  <li><strong>مورد نیازمند بررسی:</strong> ردیف یا مقداری که دست‌کم یک Detector معتبر آن را غیرمعمول دیده است.</li>
   <li><strong>شدت نسبی:</strong> قدرت سیگنال در همان اجرای تحلیل، نه میزان خسارت واقعی.</li>
   <li><strong>اطمینان تحلیل:</strong> جمع‌بندی مهندسی از کیفیت اجرا و سازگاری شواهد، نه احتمال درست‌بودن تشخیص.</li>
   <li><strong>سلامت داده:</strong> وضعیت کیفیت و آمادگی ورودی برای تحلیل، نه سنجه دقت روش‌ها.</li>
@@ -360,7 +432,7 @@
 </ul>
 
 <p dir="rtl" align="right">
-  ممکن است تحلیل با موفقیت کامل شود و هیچ ردیفی علامت نخورد. این حالت خطا نیست؛ فقط یعنی روش‌های اجراشده با تنظیمات فعلی موردی برای بررسی پیدا نکرده‌اند.
+  ممکن است تحلیل با موفقیت کامل شود و هیچ ردیفی علامت نخورد. این حالت خطا نیست؛ فقط یعنی Detectorهای اجراشده با تنظیمات فعلی موردی برای بررسی پیدا نکرده‌اند.
 </p>
 
 <a id="autoencoder"></a>
@@ -379,7 +451,7 @@
 </p>
 
 <p dir="rtl" align="right">
-  نتیجه Autoencoder با نتیجه شش روش کلاسیک یکی فرض نمی‌شود. یک ردیف ممکن است فقط در تحلیل کلاسیک، فقط در بازسازی، در هر دو مسیر یا در هیچ‌کدام دیده شود. این جداسازی کمک می‌کند دو نوع شواهد بدون تغییر دادن یکدیگر بررسی شوند.
+  نتیجه Autoencoder با نتیجه شش Detector کلاسیک یکی فرض نمی‌شود. یک ردیف ممکن است فقط در تحلیل کلاسیک، فقط در بازسازی، در هر دو مسیر یا در هیچ‌کدام دیده شود.
 </p>
 
 ---
@@ -388,11 +460,11 @@
 <h2 dir="rtl" align="right">هوش مصنوعی و حریم خصوصی</h2>
 
 <p dir="rtl" align="right">
-  هوش مصنوعی در ناهنجو یک لایه اختیاری برای توضیح و گزارش است. محاسبات اصلی، اجرای روش‌های تشخیص، ترکیب شواهد، نمودارها و ساخت نتیجه بدون هوش مصنوعی انجام می‌شوند. پس از آماده‌شدن نتیجه، کاربر می‌تواند برای جمع‌بندی، توضیح نمودار یا تفسیر Autoencoder از AI استفاده کند.
+  هوش مصنوعی در ناهنجو یک لایه اختیاری برای توضیح و گزارش است. محاسبات اصلی، اجرای Detectorها، ترکیب شواهد، نمودارها و ساخت نتیجه بدون هوش مصنوعی انجام می‌شوند. پس از آماده‌شدن نتیجه، کاربر می‌تواند برای جمع‌بندی، توضیح نمودار یا تفسیر Autoencoder از AI استفاده کند.
 </p>
 
 <p dir="rtl" align="right">
-  هوش مصنوعی اجازه ندارد ردیف جدیدی به نتیجه موتور اضافه کند، موردی را حذف کند یا تصمیم روش‌های تحلیلی را بازنویسی کند. متن تولیدشده باید براساس داده و خلاصه ساختاریافته‌ای باشد که برنامه در اختیار آن قرار می‌دهد.
+  هوش مصنوعی اجازه ندارد ردیف جدیدی به نتیجه موتور اضافه کند، موردی را حذف کند یا تصمیم Detectorها را بازنویسی کند. متن تولیدشده باید براساس داده و خلاصه ساختاریافته‌ای باشد که برنامه در اختیار آن قرار می‌دهد.
 </p>
 
 <ul dir="rtl" align="right">
@@ -438,7 +510,7 @@ flowchart TD
   <tr>
     <th align="right">لایه</th>
     <th align="right">مسئولیت</th>
-    <th dir="ltr" align="left">مسیرهای اصلی</th>
+    <th dir="ltr" align="left">مسیر اصلی</th>
   </tr>
   <tr>
     <td align="right">رابط کاربری</td>
@@ -457,13 +529,13 @@ flowchart TD
   </tr>
   <tr>
     <td align="right">تحلیل</td>
-    <td align="right">روش‌های تشخیص، راهبرد اجرا، ترکیب شواهد، رتبه‌بندی و Autoencoder</td>
+    <td align="right">Detectorها، راهبرد اجرا، ترکیب شواهد، رتبه‌بندی و Autoencoder</td>
     <td dir="ltr" align="left"><code>analysis/</code></td>
   </tr>
   <tr>
     <td align="right">تفسیر و خروجی</td>
     <td align="right">هوش مصنوعی، نمودار، صفحه نتایج و گزارش فارسی</td>
-    <td dir="ltr" align="left"><code>ai/</code>, <code>reports/</code>, <code>controllers/charts/</code></td>
+    <td dir="ltr" align="left"><code>ai/</code>, <code>reports/</code></td>
   </tr>
   <tr>
     <td align="right">عملیات محصول</td>
@@ -495,96 +567,33 @@ Nahanjo_v2/
 |-- core/                   # Version, resources, sync, shared services
 |-- storage/                # Default local settings
 |-- requirements.txt
-|-- build_pyinstaller.cmd
 ~~~
 
 ---
 
-<a id="installation"></a>
-<h2 dir="rtl" align="right">نصب، تست و Build</h2>
+<a id="development"></a>
+<h2 dir="rtl" align="right">توسعه و تست</h2>
 
 <p dir="rtl" align="right">
-  مسیر رسمی بسته‌بندی و آزمون فعلی برای
-  <strong>Windows x64</strong>
-  و
-  <strong>Python 3.11 64-bit</strong>
-  است.
-</p>
-
-<h3 dir="rtl" align="right">اجرای سورس</h3>
-
-~~~powershell
-py -3.11 -m venv venv
-.\venv\Scripts\python.exe -m pip install --upgrade pip
-.\venv\Scripts\python.exe -m pip install -r requirements.txt
-.\venv\Scripts\python.exe main.py
-~~~
-
-<p dir="rtl" align="right">
-  موتور تحلیل محلی بدون AI قابل استفاده است. تفسیر هوش مصنوعی، بررسی نسخه جدید و همگام‌سازی اجزای AI برای ارتباط با سرویس مربوط به شبکه نیاز دارند.
+  کاربران عادی نیازی به اجرای تست یا ساخت برنامه ندارند و باید از نسخه آماده کنار Release استفاده کنند. این بخش فقط برای توسعه‌دهنده‌ای است که سورس را تغییر می‌دهد.
 </p>
 
 <h3 dir="rtl" align="right">اجرای تست‌ها</h3>
 
 ~~~powershell
 $env:QT_QPA_PLATFORM = "offscreen"
-.\venv\Scripts\python.exe -m unittest discover -s tests -v
+py -3.11 -m unittest discover -s tests -v
 ~~~
 
 <p dir="rtl" align="right">
-  تست‌ها مسیر ورود داده، ردیابی منبع، روش‌های تشخیص، موتورهای ترکیب نتیجه، رابط، نمودارها، Autoencoder، همگام‌سازی AI، Updater و گزارش را پوشش می‌دهند. Benchmark مصنوعی از مسیر
+  تست‌ها مسیر ورود داده، ردیابی منبع، Detectorها، موتورهای ترکیب نتیجه، رابط، نمودارها، Autoencoder، همگام‌سازی AI، Updater و گزارش را پوشش می‌دهند. Benchmark مصنوعی از مسیر
   <code>benchmarks/run_anomaly_benchmark.py</code>
   در دسترس است، اما جایگزین ارزیابی روی داده واقعی هر حوزه نیست.
 </p>
 
-<h3 dir="rtl" align="right">ساخت برنامه و Installer</h3>
-
 <p dir="rtl" align="right">
-  اسکریپت Build انتظار دارد محیط مجازی دقیقاً در پوشه
-  <code>venv</code>
-  باشد. برای ساخت Installer نیز
-  <strong>Inno Setup 6</strong>
-  لازم است.
+  فرایند ساخت نسخه آماده و Installer در محیط توسعه انجام می‌شود و فرمان‌های آن عمداً در README کاربرمحور قرار نگرفته‌اند.
 </p>
-
-~~~powershell
-.\build_pyinstaller.cmd
-.\installer\build_installer.cmd
-~~~
-
-<p dir="rtl" align="right">
-  شماره نسخه مرجع از
-  <code>core/app_info.py</code>
-  خوانده می‌شود. جزئیات Package، Manifest، SHA-256 و انتشار در مستندات Build قرار دارد.
-</p>
-
----
-
-<a id="documentation"></a>
-<h2 dir="rtl" align="right">مستندات فنی</h2>
-
-<table dir="rtl">
-  <tr>
-    <th align="right">مستند</th>
-    <th align="right">موضوع</th>
-  </tr>
-  <tr>
-    <td dir="ltr" align="left"><a href="./SCIENTIFIC_ANALYSIS_AUDIT_FA.md">SCIENTIFIC_ANALYSIS_AUDIT_FA.md</a></td>
-    <td align="right">قرارداد علمی، مرز شاخص‌ها و شواهد فنی تحلیل</td>
-  </tr>
-  <tr>
-    <td dir="ltr" align="left"><a href="./docs/UPDATE_BUILD_NOTES.md">UPDATE_BUILD_NOTES.md</a></td>
-    <td align="right">ساخت برنامه، Updater، Installer و انتشار نسخه</td>
-  </tr>
-  <tr>
-    <td dir="ltr" align="left"><a href="./docs/AI_SYNC_BUILD_NOTES.md">AI_SYNC_BUILD_NOTES.md</a></td>
-    <td align="right">ساخت و اعتبارسنجی بسته همگام‌سازی هوش مصنوعی</td>
-  </tr>
-  <tr>
-    <td dir="ltr" align="left"><a href="./requirements.txt">requirements.txt</a></td>
-    <td align="right">وابستگی‌های Runtime و Build</td>
-  </tr>
-</table>
 
 ---
 
@@ -596,7 +605,7 @@ $env:QT_QPA_PLATFORM = "offscreen"
 <ul dir="rtl" align="right">
   <li>نسخه مرجع سورس <code>2.0.3</code> است.</li>
   <li>رابط اصلی فارسی و مبتنی بر PyQt6 است.</li>
-  <li>پشتیبانی رسمی Build، Installer و Updater در حال حاضر برای Windows x64 است.</li>
+  <li>نسخه آماده، Installer و Updater رسمی فعلاً برای Windows x64 هستند.</li>
   <li>مسیر کلاسیک روی توالی عددی انتخاب‌شده کار می‌کند و Autoencoder مسیر بازسازی مستقل دارد.</li>
   <li>گزارش فارسی PDF و نمودارهای تعاملی در خود برنامه تولید می‌شوند.</li>
 </ul>
@@ -608,7 +617,7 @@ $env:QT_QPA_PLATFORM = "offscreen"
   <li>نتیجه برنامه تشخیص قطعی یا توصیه حقوقی، پزشکی، مالی یا ایمنی نیست.</li>
   <li>کیفیت نتیجه به ساختار داده، اندازه نمونه، توزیع و مناسب‌بودن روش‌ها وابسته است.</li>
   <li>هوش مصنوعی ممکن است Context درخواست را به سرویس خارجی ارسال کند.</li>
-  <li>پشتیبانی رسمی Linux و macOS هنوز در مسیر Build و QA تثبیت نشده است.</li>
+  <li>پشتیبانی رسمی Linux و macOS هنوز در مسیر نسخه آماده و QA تثبیت نشده است.</li>
 </ul>
 
 <h3 dir="rtl" align="right">جهت توسعه</h3>
@@ -645,9 +654,7 @@ $env:QT_QPA_PLATFORM = "offscreen"
 </p>
 
 <p dir="rtl" align="right">
-  در Snapshot فعلی فایل
-  <code>LICENSE</code>
-  عمومی وجود ندارد. تا زمان افزودن مجوز صریح، همه حقوق محفوظ است و انتشار سورس به معنی اجازه خودکار برای استفاده، بازتوزیع، فروش یا ساخت نسخه مشتق‌شده نیست.
+  در Snapshot فعلی فایل <code>LICENSE</code> عمومی وجود ندارد. تا زمان افزودن مجوز صریح، همه حقوق محفوظ است و انتشار سورس به معنی اجازه خودکار برای استفاده، بازتوزیع، فروش یا ساخت نسخه مشتق‌شده نیست.
 </p>
 
 <p align="center">
